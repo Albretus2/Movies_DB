@@ -12,12 +12,24 @@ search.addEventListener("click", function () {
   }, 200);
 });
 
+const arrowUp = document.querySelector("#arrowUp");
+
+arrowUp.addEventListener("click", () => {
+  arrowUp.classList.remove("shadow-hard");
+  arrowUp.classList.add("search-click");
+
+  setTimeout(() => {
+    arrowUp.classList.add("shadow-hard");
+    arrowUp.classList.remove("search-click");
+  }, 200);
+});
+
 // ketika card movie di click
 
-async function moviecard() {
+function moviecard() {
   const movieCard = Array.from(document.querySelectorAll("#movieCard"));
 
-  await movieCard.map((m) => {
+  movieCard.map((m) => {
     m.addEventListener("click", function () {
       m.classList.remove("shadow-card");
       m.classList.add("card-click");
