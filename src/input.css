@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  @apply scroll-smooth;
+}
+
+*,
+body {
+  @apply font-montserat;
+}
+
+.shadow-hard {
+  box-shadow: 2px 4px #06090d;
+}
+
+.shadow-card {
+  box-shadow: 1px 5px #06090d;
+}
+
+.search-click {
+  @apply translate-x-2 translate-y-1;
+}
+
+.card-click {
+  @apply translate-x-1 translate-y-3;
+}

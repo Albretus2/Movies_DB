@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="nord">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie DB | Stanley</title>
+    <link rel="shorcut icon" href="./img/profile.jpg">
+
+    <!-- output css -->
+    <link rel="stylesheet" href="./output.css">
+
+    <!-- Google font (Monstserat) -->
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+    </style>
+
+    <!-- box icon -->
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+
+</head>
+
+<body>
+    <!-- Main -->
+    <main>
+        <div class="container mx-auto min-h-screen">
+            <section id="search-section">
+                <div class="flex flex-wrap  justify-center">
+                    <div class="w-full md:w-1/2  my-5 p-5 ">
+                        <div class="infoAlert">
+                            <!-- <div role="alert" class="alert alert-info my-5">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    class="stroke-current shrink-0 w-6 h-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                                <span>New software update available.</span>
+                            </div> -->
+                        </div>
+                        <h1 class="text-xl font-montserat font-semibold uppercase tracking-widest mb-2">Movie DB
+                        </h1>
+                        <p class="mb-3 text-sm text-neutral">A movie database that contains information about movies,
+                            such as IMDb . <br> <span class="text-primary">*click the cards for more information</span>
+                        </p>
+                        <label id="search" for="search" class="border-2 border-secondary-content w-full rounded-md shadow-hard transition-all
+                            flex flex-wrap items-center px-4  group">
+                            <input id="search-keyword" type="text" placeholder="Search movie ..."
+                                class="bg-transparent outline-none w-[90%] py-3 group-hover:cursor-pointer">
+                            <box-icon name='search' class="ms-auto group-hover:cursor-pointer"></box-icon>
+                        </label>
+                    </div>
+                </div>
+            </section>
+            <!-- -------- -->
+            <section id="movie-section">
+                <div class="movies-container flex flex-wrap mx-auto justify-between md:w-1/2 px-5 ">
+                    <!-- <div id="movieCard"
+                        class="movieCard card w-full p-0 m-0  xl:w-[49%] bg-transparent mb-5 border-2 border-secondary-content shadow-card cursor-pointer transition-all"
+                        data-imdbid="${m.imdbID}">
+                        <figure><img src="${m.Poster}" alt="Shoes" class="h-80 w-full object-cover" /></figure>
+                        <div class="card-body p-4">
+                            <h2 class="card-title line-clamp-2 ">${m.Title}
+                            </h2>
+                            <div class=" flex flex-wrap gap-2 font-semibold items-center">
+                                /Type
+                                <span>:</span>
+                                <p class="text-neutral">${m.Type}</p>
+                            </div>
+                            <div class=" flex flex-wrap gap-2 font-semibold items-center mb-3">
+                                <box-icon name='calendar-event'></box-icon>
+                                <span>:</span>
+                                <p class="text-neutral">${m.Year}</p>
+                            </div>
+                            <button
+                                class="card-btn flex justify-between px-4 p-3 bg-secondary font-semibold rounded-md items-center text-primary-content"
+                                onclick="cardModalMovie.showModal()">
+                                <span>more informations</span>
+                                <box-icon name='right-arrow-alt' color='#101211'></box-icon>
+                            </button>
+                        </div>
+                    </div> -->
+                </div>
+                <!-- Modal Card -->
+                <!-- Open the modal using ID.showModal() method -->
+                <dialog id="cardModalMovie" class="modal">
+                    <!-- <div class="modal-box">
+                        <form method="dialog">
+                            <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+                        </form>
+                        <h3 class="font-bold text-lg mb-5">Dune part-2</h3>
+                        <div class="flex ">
+                            <p class="font-semibold w-1/3">Released </p>
+                            <p class="font-medium">2 jun 2023</p>
+                        </div>
+                        <div class="flex">
+                            <p class="font-semibold w-1/3">Genre </p>
+                            <p class="font-medium">Drama, Fantasy, Horror</p>
+                        </div>
+                        <div class="flex">
+                            <p class="font-semibold w-1/3">Rated </p>
+                            <p class="font-medium">TV-MA</p>
+                        </div>
+                        <div class="flex">
+                            <p class="font-semibold w-1/3">IMDb rating </p>
+                            <p class="font-medium">5.9 / 10</p>
+                        </div>
+                        <div class="flex flex-col mt-6">
+                            <p class="font-semibold">Plot:</p>
+                            <p class="font-medium">An episodic anthology that will follow individual characters
+                                from the The Walking Dead TV universe, both new and old."</p>
+                        </div>
+                    </div> -->
+                    <form method="dialog" class="modal-backdrop">
+                        <button>close</button>
+                    </form>
+                </dialog>
+                <!-- end modal -->
+            </section>
+        </div>
+    </main>
+    <a href="#"
+        class="w-12 h-12 border-2 border-primary-content rounded-lg flex items-center justify-center fixed bottom-6 right-6 shadow-hard">
+        <!-- <span>🌸</span> -->
+        <box-icon name='up-arrow-alt'></box-icon>
+    </a>
+    <!-- footer -->
+    <footer
+        class="footer footer-center p-10 border-t-2 mt-8 border-primary-content text-primary-content  bottom-0 shadow-lg">
+        <aside>
+            <div class="avatar">
+                <div class="w-24 rounded-full">
+                    <img src="./img/profile.jpg" />
+                </div>
+            </div>
+            <p class="font-bold">
+                ~ Created by Stanley Beraksi / <span class="text-neutral">Albretus</span> ~
+            </p>
+            <p>Copyright © 2024 - All right reserved</p>
+        </aside>
+        <nav>
+            <div class="grid grid-flow-col gap-4">
+                <a href="https://www.instagram.com/alberrr.e/" target="_blank">
+                    <box-icon name='instagram-alt' type='logo'></box-icon>
+                </a>
+                <a href="https://twitter.com/BochiI1874293" target="_blank">
+                    <box-icon name='twitter' type='logo'></box-icon>
+                </a>
+                <a href="https://github.com/Albretus2" target="_blank">
+                    <box-icon name='github' type='logo'></box-icon>
+                </a>
+                <a href="https://www.youtube.com/channel/UCAc4EVbQ8DlYm3aTntDNBZw" target="_blank">
+                    <box-icon name='youtube' type='logo'></box-icon>
+                </a>
+
+            </div>
+        </nav>
+    </footer>
+
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
