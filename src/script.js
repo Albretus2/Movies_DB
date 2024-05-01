@@ -95,7 +95,7 @@ function elementCard(m) {
   return `
   <div id="movieCard"
   class="movieCard card w-full p-0 m-0  xl:w-[49%] bg-transparent mb-5 border-2 border-secondary-content shadow-card cursor-pointer transition-all">
-  <figure><img src="${m.Poster}" alt="Shoes" class="h-80 w-full object-cover" /></figure>
+  <figure><img src="${m.Poster}" alt="${m.Title}" class="h-80 w-full object-cover" /></figure>
   <div class="card-body p-4">
       <h2 class="card-title line-clamp-2 ">${m.Title}
       </h2>
